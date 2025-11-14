@@ -1,297 +1,355 @@
-/* ===== NAVEGACIÓN ===== */
+/* ========================================
+   RESETEO BÁSICO - Limpia todo al inicio
+   ======================================== */
 
-
-
-nav a:hover {
-  text-decoration: underline; /* Al pasar el mouse, muestra subrayado */
-}
-
-/* ===== ENLACE ACTIVO ===== */
-nav a.active {
-  text-decoration: underline; /* Marca el enlace actual con subrayado */
-  opacity: 0.9;               /* Da un pequeño efecto visual */
-}
-
- /* ===== RESETEO GENERAL ===== */
+/* El asterisco (*) significa "TODO", es como decirle al navegador: 
+   "A todos los elementos de la página, hazles esto" */
 * {
-  margin: 0; /* Elimina márgenes predeterminados */
-  padding: 0; /* Elimina rellenos predeterminados */
-  box-sizing: border-box; /* Hace que width y height incluyan padding y borde */
+  margin: 0;    /* Elimina márgenes (espacios) que vienen por defecto, como cuando un libro tiene márgenes */
+  padding: 0;   /* Elimina rellenos (espacios internos) por defecto, como cuando una hoja tiene sangría */
+  box-sizing: border-box; /* Hace que el ancho y alto CUENTE el borde y el padding. 
+                             Es como decir: "Si tu caja mide 10cm, incluye el grosor de las paredes" */
 }
 
-/* ===== ESTILO GENERAL DEL DOCUMENTO ===== */
+
+/* ========================================
+   CONFIGURACIÓN GENERAL DEL CUERPO
+   ======================================== */
+
+/* "body" es todo el cuerpo de tu página, como la página en blanco de un cuaderno */
 body {
-  font-family: "Poppins", sans-serif; /* Fuente moderna y elegante */
-  background: url("../Binario.webp") no-repeat center center fixed; /* Imagen de fondo fija */
-  background-size: cover; /* La imagen cubre toda la pantalla */
-  color: #162915; /* Color de texto para contraste */
-  line-height: 1.6; /* Mejora la lectura */
-  padding: 0 1rem; /* Pequeño margen lateral */
-  transition: background 0.5s ease, color 0.5s ease; /* Transiciones suaves */
+  font-family: "Poppins", sans-serif; /* Tipo de letra. "Poppins" es bonita, 
+                                         y "sans-serif" es el plan B si Poppins no carga */
+  
+  background: url("../Diseño_web/Binario.webp") no-repeat center center fixed; 
+  /* ↑↑↑ ESTO ES LA IMAGEN DE FONDO ↑↑↑
+     url() es la dirección de tu imagen
+     no-repeat = no se repite como mosaico
+     center center = centrada en la pantalla
+     fixed = se queda quieta al hacer scroll
+  */
+  
+  background-size: cover; /* La imagen crece o se encoge para cubrir TODA la pantalla, 
+                             como cuando estiras un papel tapiz */
+  
+  color: #162915; /* Color del texto (verde oscuro). Es como elegir el color de tu lápiz */
+  
+  line-height: 1.6; /* Espacio entre líneas. 1.6 es como escribir a línea y media, para que se lea mejor */
+  
+  padding: 0 1rem; /* Espacio a los lados de la página. "1rem" es como un dedo de espacio */
 }
 
-/* ===== MODO OSCURO AUTOMÁTICO ===== */
-@media (prefers-color-scheme: dark) {
-  body {
-    color: #111111; /* Texto más claro en modo oscuro */
+
+/* ========================================
+   CABECERA - Lo que va arriba de todo
+   ======================================== */
+
+/* "header" es la cabecera, como el título de un cuaderno */
+header {
+  text-align: center; /* Centra el texto horizontalmente, como cuando alineas al centro en Word */
+  padding: 2rem 0 1rem; /* Espacio arriba y abajo. 
+                           2rem arriba, 0 a los lados, 1rem abajo */
+}
+
+/* "header h1" significa: "el título 1 que ESTÁ DENTRO de la cabecera" */
+header h1 {
+  font-weight: 700; /* Negrita muy fuerte, como cuando presionas mucho el lápiz */
+  font-size: 2.5rem; /* TAMAÑO del texto. 2.5rem es como 40px, bastante grande */
+  margin-bottom: 1rem; /* Espacio SOLO debajo del título, como dejar una línea en blanco */
+}
+
+
+/* ========================================
+   BARRA DE NAVEGACIÓN - Menú principal
+   ======================================== */
+
+/* "nav ul" = "la lista (ul) que está DENTRO de la navegación" */
+nav ul {
+  list-style: none; /* Quita las viñetas (puntos) de la lista, 
+                       como cuando borras los números de una lista */
+  
+  display: flex; /* Pone los elementos en fila horizontal, 
+                    como alinear libros en una estantería */
+  
+  justify-content: center; /* Los centra horizontalmente. 
+                               "justify" es como justificar en Word */
+  
+  gap: 2rem; /* Espacio ENTRE cada enlace. "2rem" es como dos dedos de separación */
+}
+
+/* "nav a" = "cada enlace (a) que está DENTRO de la navegación" */
+nav a {
+  text-decoration: none; /* Quita el subrayado que tienen los enlaces por defecto */
+  color: #070707; /* Color del texto (casi negro) */
+  
+  background: rgba(213, 214, 231, 0.1); /* Fondo muy transparente. 
+                                            rgba() es color con transparencia (0.1 = casi invisible) */
+  
+  padding: 0.6rem 1.2rem; /* Espacio DENTRO del botón. 
+                              0.6rem arriba/abajo, 1.2rem izquierda/derecha */
+  
+  border-radius: 12px; /* Bordes redondos. Cuanto más número, más redondo */
+  
+  /* Sombra para efecto 3D sencillo, como cuando un objeto hace sombra en la pared */
+  box-shadow: 4px 4px 8px rgba(2, 2, 2, 0.4),
+              -4px -4px 8px rgba(255,255,255,0.05);
+  
+  /* Transición suave al pasar el mouse. 
+     "ease" significa que empieza lento, acelera y termina lento, como un coche */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ":hover" significa "CUANDO el mouse está encima" */
+nav a:hover {
+  transform: translateY(-3px); /* Se mueve 3 píxeles hacia arriba, 
+                                   como cuando levitas un poquito */
+  
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5); /* Sombra más grande, 
+                                               como cuando te acercas a una lámpara */
+  
+  text-decoration: underline; /* Aparece subrayado */
+}
+
+/* ".active" es una clase que TÚ debes poner en el enlace de la página actual */
+nav a.active {
+  text-decoration: underline; /* Siempre subrayado */
+  opacity: 0.9; /* Un poco más transparente. 1 = visible, 0 = invisible */
+}
+
+
+/* ========================================
+   SECCIONES CENTRALES - Cada bloque de contenido
+   ======================================== */
+
+/* "section" es cada sección de tu página, como cada capítulo de un libro */
+section {
+  max-width: 900px; /* Ancho máximo. No crece más allá de 900px, 
+                       como no estirar una camiseta más allá de su tamaño */
+  
+  margin: 3rem auto; /* 3rem de espacio arriba y abajo, 
+                         "auto" centra horizontalmente como un coche autónomo */
+  
+  background: rgba(255,255,255,0.14); /* Fondo blanco transparente (14% de opacidad) */
+  
+  backdrop-filter: blur(20px); /* EFECTO VIDRIO: desenfoca lo que está detrás, 
+                                   como cuando miras a través de una ventana sucia */
+  
+  padding: 2rem; /* Espacio DENTRO de la caja, como los márgenes de una hoja */
+  
+  border-radius: 14px; /* Bordes redondos */
+  
+  border: 1px solid rgba(1, 4, 32, 0.3); /* Borde fino. 1px = grosor del pelo */
+  
+  /* Sombra suave, como la sombra de una nube */
+  box-shadow: 0px 6px 25px rgba(245, 244, 244, 0.3);
+  
+  /* Animación de entrada: aparece con efecto */
+  animation: aparecer 1s ease forwards;
+  opacity: 0; /* Empieza invisible (0) */
+}
+
+/* "section h2" = "el título 2 que está DENTRO de las secciones" */
+section h2 {
+  color: #152a63; /* Color del texto */
+  font-size: 1.8rem; /* Tamaño del texto */
+  margin-bottom: 1rem; /* Espacio debajo */
+}
+
+
+/* ========================================
+   ANIMACIÓN - Aparecen los elementos al cargar
+   ======================================== */
+
+/* "@keyframes" es como decir: "oye navegador, crea una película llamada 'aparecer'" */
+@keyframes aparecer {
+  from {
+    opacity: 0; /* Empieza invisible */
+    transform: translateY(25px); /* Posición: 25px más abajo de su sitio */
+  }
+  to {
+    opacity: 1; /* Termina visible */
+    transform: translateY(0); /* Llega a su lugar correcto */
   }
 }
 
-/* ===== ANIMACIÓN DE ENTRADA SUAVE ===== */
-section, header, nav {
-  animation: aparecer 1s ease forwards; /* Activamos animación */
-  opacity: 0; /* Empieza invisible */
-}
 
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(25px); } /* se desliza hacia arriba */
-  to { opacity: 1; transform: translateY(0); } /* queda visible */
-}
+/* ========================================
+   ARTÍCULOS - Dentro de las secciones
+   ======================================== */
 
-/* ===== CABECERA ===== */
-header {
-  text-align: center; /* Centra el contenido */
-  padding: 2rem 0 1rem; /* Espaciado superior e inferior */
-}
-
-
-/* ===== TÍTULO PRINCIPAL ===== */
-header h1 {
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-/* ===== NAVEGACIÓN ===== */
-nav ul {
-  list-style: none; /* Quita viñetas */
-  display: flex; /* Pone los enlaces en fila */
-  justify-content: center; /* Los centra */
-  gap: 2rem; /* Espaciado entre enlaces */
-}
-
-/* ===== BOTONES NEO UI ===== */
-nav a {
-  text-decoration: none;
-  color: #070707;
-  background: rgba(213, 214, 231, 0.1); /* Fondo suave transparente */
-  padding: 0.6rem 1.2rem;
-  border-radius: 12px; /* Bordes redondeados */
-  box-shadow: 4px 4px 8px rgba(0,0,0,0.4),
-              -4px -4px 8px rgba(255,255,255,0.05); /* Efecto relieve */
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-nav a:hover {
-  transform: translateY(-3px); /* Se eleva al pasar mouse */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5); /* Aumenta sombra */
-}
-
-/* ===== SECCIONES CON EFECTO VIDRIO (GLASSMORPHISM) ===== */
-section {
-  max-width: 900px;
-  margin: 3rem auto;
-  background: rgba(255,255,255,0.14); /* Fondo blanco translúcido */
-  backdrop-filter: blur(20px); /* Efecto de vidrio */
-  padding: 2rem;
-  border-radius: 14px;
-  border: 1px solid rgba(1, 4, 32, 0.3); /* Borde elegante */
-  box-shadow: 0px 6px 25px rgba(245, 244, 244, 0.3);
-}
-
-section h2 {
-  color: #0e0d0d;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-/* ===== ARTÍCULOS ===== */
+/* "article" es como un párrafo especial dentro de cada capítulo */
 article {
-  margin-top: 1.2rem;
-  padding-left: 1rem;
-  border-left: 3px solid #353434; /* Línea decorativa */
+  margin-top: 1.2rem; /* Espacio arriba */
+  padding-left: 1rem; /* Sangría izquierda */
+  
+  border-left: 3px solid #353434; /* Línea decorativa a la izquierda, 
+                                      como una barra de color en el margen */
 }
 
+/* "article h3" = "el título 3 dentro de los artículos" */
 article h3 {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.3rem; /* Espacio pequeño debajo del subtítulo */
 }
 
-/* ===== PÁRRAFOS ===== */
+
+/* ========================================
+   PÁRRAFOS - Texto normal
+   ======================================== */
+
+/* "p" es cada párrafo normal, como cada línea de tu cuaderno */
 p {
-  font-size: 1rem;
+  font-size: 1rem; /* Tamaño estándar (16px) */
 }
 
-/* ===== FOOTER ===== */
+
+/* ========================================
+   PIE DE PÁGINA - Lo que va abajo de todo
+   ======================================== */
+
+/* "footer" es el pie de página, como los créditos de una película */
 footer {
-  max-width: 1200px;
-  margin: 3rem auto 0;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.14); /* Mismo efecto glassmorphism */
+  max-width: 1200px; /* Más ancho que las secciones */
+  
+  margin: 3rem auto 0; /* 3rem arriba, centrado, 0 abajo */
+  
+  padding: 2rem; /* Espacio dentro */
+  
+  /* Mismo efecto vidrio que las secciones */
+  background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(20px);
+  
   border-radius: 14px;
-  border: 1px solid rgba(1, 4, 32, 0.3);
+  border: 1px solid rgba(43, 64, 202, 0.3);
   box-shadow: 0px 6px 25px rgba(245, 244, 244, 0.3);
-  display: flex; /* Distribuye las columnas horizontalmente */
+  
+  /* Distribuye las columnas horizontalmente */
+  display: flex;
   justify-content: space-around; /* Espacio uniforme entre columnas */
-  gap: 2rem;
-  flex-wrap: wrap; /* Permite que se envuelvan en pantallas pequeñas */
+  gap: 2rem; /* Espacio entre columnas */
+  flex-wrap: wrap; /* Si no caben, las pone en columna */
 }
 
+/* "footer div" = "cada bloque (div) que está DENTRO del footer" */
 footer div {
-  flex: 1; /* Cada columna ocupa el mismo espacio */
-  min-width: 200px; /* Ancho mínimo para evitar que se compriman demasiado */
+  flex: 1; /* Ocupa el mismo espacio cada bloque, como repartir pizza en partes iguales */
+  min-width: 200px; /* Ancho mínimo. No puede ser más pequeño que 200px */
 }
 
+/* "footer h2" = "el título 2 dentro del footer" */
 footer h2 {
-  color: #0e0d0d;
+  color: #e4e5e9;
   font-size: 1.3rem;
   margin-bottom: 0.8rem;
   border-bottom: 2px solid rgba(79, 70, 229, 0.5); /* Línea decorativa */
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.5rem; /* Espacio debajo de la línea */
 }
 
+/* "footer p" = "los párrafos del footer" */
 footer p {
   color: #162915;
-  font-size: 0.95rem;
+  font-size: 0.95rem; /* Texto un poquito más pequeño */
   line-height: 1.6;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem; /* Espacio entre párrafos */
 }
 
+/* "footer ul" = "las listas del footer" */
 footer ul {
-  list-style: none;
-  padding: 0;
+  list-style: none; /* Sin viñetas */
+  padding: 0; /* Sin espacios */
 }
 
+/* "footer ul li" = "cada elemento (li) de la lista" */
 footer ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem; /* Espacio entre cada elemento */
 }
 
+/* "footer a" = "los enlaces (a) del footer" */
 footer a {
-  color: #1a0e5f;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  color: #f9f8fa; /* Color morado oscuro */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s ease; /* Cambio de color suave */
 }
 
+/* ":hover" cuando pasas el mouse por encima del enlace del footer */
 footer a:hover {
-  color: rgba(79, 70, 229, 0.8);
-  text-decoration: underline;
-}
-
-#contacto p {
-  text-align: center;
-  font-weight: 600;
-  color: #050505;
+  color: rgba(242, 242, 243, 0.8); /* Color más claro */
+  text-decoration: underline; /* Aparece subrayado */
 }
 
 
-/* ========================
-   Menú móvil
-   ======================== */
-.mobile-menu { 
-  position: fixed; 
-  inset: 0; 
-  display: none; 
-  align-items: center; 
-  justify-content: center; 
-  background: rgba(0,0,0,0.55); 
-  backdrop-filter: blur(12px); 
-  padding: 2rem; 
-}
-.mobile-menu.active { display: flex; } /* se muestra solo si tiene .active */
-.mobile-menu__panel { 
-  width: min(680px, 92%); 
-  background: rgba(255, 255, 255, 0.95); 
-  border-radius: 16px; 
-  padding: 2rem; 
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); 
-}
-.mobile-menu__list { 
-  display: grid; 
-  gap: 1rem; 
-  text-align: center; 
-}
-.mobile-menu__close { 
-  position: absolute; 
-  top: 1rem; 
-  right: 1rem; 
-  background: transparent; 
-  border: none; 
-  color: #162915; 
-  font-size: 1.25rem; 
-  cursor: pointer; 
+/* ========================================
+   MODO OSCURO - Si el sistema está en modo oscuro
+   ======================================== */
+
+/* Esto detecta si tu computadora está en modo oscuro */
+@media (prefers-color-scheme: dark) {
+  
+  /* Cambia el color del texto del body a blanco para que se vea */
+  body {
+    color: #ffffff; /* Texto blanco */
+    background-color: #41638f; /* Color de Fondo de la pagina por si la imagen no carga */
+  }
+  
+  /* Cambia el fondo de secciones y footer en modo oscuro */
+  section, footer {
+    background: rgba(0, 0, 0, 0.2); /* Fondo negro transparente (20% visible) */
+  }
 }
 
-/* ========================
-   Responsive
-   ======================== */
+
+/* ========================================
+   RESPONSIVE - Para pantallas pequeñas (tablets y móviles)
+   ======================================== */
+
+/* Si la pantalla tiene 900px o menos de ancho, haz esto: */
 @media (max-width: 900px) {
-  /* Ajustes para tablets y pantallas medianas */
+  
+  /* El título se hace más pequeño */
   header h1 {
-    font-size: 2rem; /* Reduce el tamaño del título */
+    font-size: 2rem; /* 2rem en lugar de 2.5rem */
   }
   
+  /* Los enlaces del menú se acercan más */
   nav ul {
-    gap: 1rem; /* Reduce el espacio entre enlaces */
-    flex-wrap: wrap; /* Permite que los enlaces se envuelvan */
+    gap: 1rem; /* De 2rem a 1rem */
   }
   
+  /* Las secciones tienen menos espacio */
   section {
-    margin: 2rem auto; /* Reduce el margen vertical */
-    padding: 1.5rem; /* Reduce el padding */
+    margin: 2rem auto; /* De 3rem a 2rem */
+    padding: 1.5rem; /* De 2rem a 1.5rem */
   }
 }
 
+
+/* Si la pantalla tiene 640px o menos (móviles), haz esto: */
 @media (max-width: 640px) {
-  /* Ajustes para móviles */
-  body { 
-    padding: 0 0.5rem; /* Reduce el padding lateral */
-    line-height: 1.6; 
-  }
   
-  header {
-    padding: 1rem 0 0.5rem; /* Reduce el padding del header */
-  }
-  
+  /* El título se hace MUCHO más pequeño */
   header h1 {
-    font-size: 1.5rem; /* Título más pequeño en móvil */
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem; /* Muy pequeño para móvil */
   }
   
+  /* Los enlaces del menú se ponen uno debajo de otro (columna) */
   nav ul {
-    flex-direction: column; /* Enlaces en columna en móvil */
-    gap: 0.5rem; /* Menos espacio entre enlaces */
+    flex-direction: column; /* "column" = columna, "row" = fila */
+    gap: 0.5rem; /* Muy poco espacio */
   }
   
-  nav a {
-    padding: 0.5rem 1rem; /* Botones más pequeños */
-    font-size: 0.9rem; /* Texto más pequeño */
-  }
-  
+  /* Las secciones están más compactas */
   section {
-    margin: 1.5rem auto; /* Menos margen */
-    padding: 1rem; /* Menos padding */
-    border-radius: 10px; /* Bordes menos redondeados */
+    margin: 1.5rem auto;
+    padding: 1rem;
+    border-radius: 10px; /* Menos redondeado */
   }
   
-  section h2 {
-    font-size: 1.4rem; /* Títulos más pequeños */
-  }
-  
-  article {
-    margin-top: 1rem;
-    padding-left: 0.75rem;
-  }
-  
-  p {
-    font-size: 0.9rem; /* Texto ligeramente más pequeño */
-  }
-  
-  /* Footer responsive */
+  /* El footer se pone en columna */
   footer {
-    flex-direction: column; /* Columnas en móvil */
+    flex-direction: column; /* Una columna debajo de otra */
+    text-align: center; /* Todo centrado */
     gap: 1.5rem;
-    padding: 1.5rem 1rem;
   }
+}
   
   footer div {
     text-align: center; /* Centra el contenido */
