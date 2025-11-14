@@ -1,0 +1,301 @@
+/* ===== NAVEGACIÓN ===== */
+
+
+
+nav a:hover {
+  text-decoration: underline; /* Al pasar el mouse, muestra subrayado */
+}
+
+/* ===== ENLACE ACTIVO ===== */
+nav a.active {
+  text-decoration: underline; /* Marca el enlace actual con subrayado */
+  opacity: 0.9;               /* Da un pequeño efecto visual */
+}
+
+ /* ===== RESETEO GENERAL ===== */
+* {
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 0; /* Elimina rellenos predeterminados */
+  box-sizing: border-box; /* Hace que width y height incluyan padding y borde */
+}
+
+/* ===== ESTILO GENERAL DEL DOCUMENTO ===== */
+body {
+  font-family: "Poppins", sans-serif; /* Fuente moderna y elegante */
+  background: url("../Binario.webp") no-repeat center center fixed; /* Imagen de fondo fija */
+  background-size: cover; /* La imagen cubre toda la pantalla */
+  color: #162915; /* Color de texto para contraste */
+  line-height: 1.6; /* Mejora la lectura */
+  padding: 0 1rem; /* Pequeño margen lateral */
+  transition: background 0.5s ease, color 0.5s ease; /* Transiciones suaves */
+}
+
+/* ===== MODO OSCURO AUTOMÁTICO ===== */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #111111; /* Texto más claro en modo oscuro */
+  }
+}
+
+/* ===== ANIMACIÓN DE ENTRADA SUAVE ===== */
+section, header, nav {
+  animation: aparecer 1s ease forwards; /* Activamos animación */
+  opacity: 0; /* Empieza invisible */
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(25px); } /* se desliza hacia arriba */
+  to { opacity: 1; transform: translateY(0); } /* queda visible */
+}
+
+/* ===== CABECERA ===== */
+header {
+  text-align: center; /* Centra el contenido */
+  padding: 2rem 0 1rem; /* Espaciado superior e inferior */
+}
+
+
+/* ===== TÍTULO PRINCIPAL ===== */
+header h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== NAVEGACIÓN ===== */
+nav ul {
+  list-style: none; /* Quita viñetas */
+  display: flex; /* Pone los enlaces en fila */
+  justify-content: center; /* Los centra */
+  gap: 2rem; /* Espaciado entre enlaces */
+}
+
+/* ===== BOTONES NEO UI ===== */
+nav a {
+  text-decoration: none;
+  color: #070707;
+  background: rgba(213, 214, 231, 0.1); /* Fondo suave transparente */
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.4),
+              -4px -4px 8px rgba(255,255,255,0.05); /* Efecto relieve */
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+nav a:hover {
+  transform: translateY(-3px); /* Se eleva al pasar mouse */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5); /* Aumenta sombra */
+}
+
+/* ===== SECCIONES CON EFECTO VIDRIO (GLASSMORPHISM) ===== */
+section {
+  max-width: 900px;
+  margin: 3rem auto;
+  background: rgba(255,255,255,0.14); /* Fondo blanco translúcido */
+  backdrop-filter: blur(20px); /* Efecto de vidrio */
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(1, 4, 32, 0.3); /* Borde elegante */
+  box-shadow: 0px 6px 25px rgba(245, 244, 244, 0.3);
+}
+
+section h2 {
+  color: #0e0d0d;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* ===== ARTÍCULOS ===== */
+article {
+  margin-top: 1.2rem;
+  padding-left: 1rem;
+  border-left: 3px solid #353434; /* Línea decorativa */
+}
+
+article h3 {
+  margin-bottom: 0.3rem;
+}
+
+/* ===== PÁRRAFOS ===== */
+p {
+  font-size: 1rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.14); /* Mismo efecto glassmorphism */
+  backdrop-filter: blur(20px);
+  border-radius: 14px;
+  border: 1px solid rgba(1, 4, 32, 0.3);
+  box-shadow: 0px 6px 25px rgba(245, 244, 244, 0.3);
+  display: flex; /* Distribuye las columnas horizontalmente */
+  justify-content: space-around; /* Espacio uniforme entre columnas */
+  gap: 2rem;
+  flex-wrap: wrap; /* Permite que se envuelvan en pantallas pequeñas */
+}
+
+footer div {
+  flex: 1; /* Cada columna ocupa el mismo espacio */
+  min-width: 200px; /* Ancho mínimo para evitar que se compriman demasiado */
+}
+
+footer h2 {
+  color: #0e0d0d;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid rgba(79, 70, 229, 0.5); /* Línea decorativa */
+  padding-bottom: 0.5rem;
+}
+
+footer p {
+  color: #162915;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: #1a0e5f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: rgba(79, 70, 229, 0.8);
+  text-decoration: underline;
+}
+
+#contacto p {
+  text-align: center;
+  font-weight: 600;
+  color: #050505;
+}
+
+
+/* ========================
+   Menú móvil
+   ======================== */
+.mobile-menu { 
+  position: fixed; 
+  inset: 0; 
+  display: none; 
+  align-items: center; 
+  justify-content: center; 
+  background: rgba(0,0,0,0.55); 
+  backdrop-filter: blur(12px); 
+  padding: 2rem; 
+}
+.mobile-menu.active { display: flex; } /* se muestra solo si tiene .active */
+.mobile-menu__panel { 
+  width: min(680px, 92%); 
+  background: rgba(255, 255, 255, 0.95); 
+  border-radius: 16px; 
+  padding: 2rem; 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); 
+}
+.mobile-menu__list { 
+  display: grid; 
+  gap: 1rem; 
+  text-align: center; 
+}
+.mobile-menu__close { 
+  position: absolute; 
+  top: 1rem; 
+  right: 1rem; 
+  background: transparent; 
+  border: none; 
+  color: #162915; 
+  font-size: 1.25rem; 
+  cursor: pointer; 
+}
+
+/* ========================
+   Responsive
+   ======================== */
+@media (max-width: 900px) {
+  /* Ajustes para tablets y pantallas medianas */
+  header h1 {
+    font-size: 2rem; /* Reduce el tamaño del título */
+  }
+  
+  nav ul {
+    gap: 1rem; /* Reduce el espacio entre enlaces */
+    flex-wrap: wrap; /* Permite que los enlaces se envuelvan */
+  }
+  
+  section {
+    margin: 2rem auto; /* Reduce el margen vertical */
+    padding: 1.5rem; /* Reduce el padding */
+  }
+}
+
+@media (max-width: 640px) {
+  /* Ajustes para móviles */
+  body { 
+    padding: 0 0.5rem; /* Reduce el padding lateral */
+    line-height: 1.6; 
+  }
+  
+  header {
+    padding: 1rem 0 0.5rem; /* Reduce el padding del header */
+  }
+  
+  header h1 {
+    font-size: 1.5rem; /* Título más pequeño en móvil */
+    margin-bottom: 0.5rem;
+  }
+  
+  nav ul {
+    flex-direction: column; /* Enlaces en columna en móvil */
+    gap: 0.5rem; /* Menos espacio entre enlaces */
+  }
+  
+  nav a {
+    padding: 0.5rem 1rem; /* Botones más pequeños */
+    font-size: 0.9rem; /* Texto más pequeño */
+  }
+  
+  section {
+    margin: 1.5rem auto; /* Menos margen */
+    padding: 1rem; /* Menos padding */
+    border-radius: 10px; /* Bordes menos redondeados */
+  }
+  
+  section h2 {
+    font-size: 1.4rem; /* Títulos más pequeños */
+  }
+  
+  article {
+    margin-top: 1rem;
+    padding-left: 0.75rem;
+  }
+  
+  p {
+    font-size: 0.9rem; /* Texto ligeramente más pequeño */
+  }
+  
+  /* Footer responsive */
+  footer {
+    flex-direction: column; /* Columnas en móvil */
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  footer div {
+    text-align: center; /* Centra el contenido */
+  }
+}
+
+/* Fin del archivo */

@@ -1,0 +1,110 @@
+<!DOCTYPE html> <!-- Indica que el documento está escrito en HTML5 -->
+<html lang="es"> <!-- Define el idioma principal del contenido -->
+
+<head>
+  <meta charset="UTF-8" /> <!-- Permite mostrar correctamente acentos y caracteres especiales -->
+  <meta name="description" content="Portafolio" /> <!-- Breve descripción para buscadores -->
+  <meta name="robots" content="index,follow" /> <!-- Indica a los buscadores que pueden indexar y seguir los enlaces -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Hace la web adaptable -->
+  <title>Es mi página</title> <!-- Título que se muestra en la pestaña del navegador -->
+
+  <!-- Enlace al archivo CSS, ubicado dentro de la carpeta "css" -->
+  <link rel="stylesheet" href="./CSS/style.css" />
+
+   <!-- Enlace al archivo JavaScript -->
+  <!-- "defer" permite que el script se ejecute después de que se cargue el HTML -->
+  <script src="./js/main.js" defer></script>   <!-- Llamado del JavaScript "css" -->
+
+</head>
+
+<body>
+  <!-- Encabezado principal de la página -->
+  <header>
+    <!-- Agregamos un logo circular para usar la clase .logo definida en el CSS -->
+    <div class="logo" aria-hidden="true"></div>
+
+    <!-- Título principal del sitio -->
+    <h1>Hemery Ronald Pèrez Correa</h1>
+
+    <!-- Barra de navegación principal -->
+    <nav aria-label="Menú principal"> <!-- aria-label mejora la accesibilidad -->
+      <ul>
+        <!-- Cada enlace lleva al ID de una sección -->
+         <!-- <li><a href="#inicio">Inicio</a></li> -->
+        <li><a href="#sobre-mi">Sobre Mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <!-- Sección de bienvenida -->
+    <!-- <section id="inicio">
+      <h2>Bienvenidos</h2>
+      <p>La nueva página</p>
+    </section> -->
+      
+    <!-- Sección personal -->
+    <section id="sobre-mi">
+      <h2>Sobre Mí</h2>
+      <p>Soy un aprendiz del SENA, deseando cambiar mi profesión para poder salir adelante y compartir más con mi familia.
+         También deseo poder trabajar desde casa el mayor tiempo posible.
+         Deseo realizar mis propios proyectos e innovar en el medio de las apps.</p>
+    </section>
+
+        <!-- Sección de proyectos (id corregido) -->
+    <section id="proyectos">
+      <h2>Proyectos</h2>
+      <p>App para la ayuda de personas con capacidad reducida de visión.
+         Para detectar posibles peligros en su medio de desplazamiento.</p>
+    </section>
+
+    <!-- Sección de servicios -->
+    <section id="servicios">
+      <h2>Nuestros Servicios</h2>
+
+      <!-- Cada servicio está dentro de un article -->
+      <article>
+        <h2>Desarrollo Web</h2>
+        <p>Construimos páginas modernas con HTML, CSS y JavaScript.</p>
+      </article>
+
+      <article>
+        <h2>Consultoría TI</h2>
+        <p>Ayudamos a tu empresa a transformarse digitalmente.</p>
+      </article>
+    </section>
+
+    <!-- Sección de contacto -->
+    <section id="contacto">
+      <h4>Contacto</h4>
+      
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <h2>Acerca de</h2>
+      <p>Soy un aprendiz dedicado a la tecnología y la innovación.</p>
+    </div>
+    <div>
+      <h2>Síguenos en:</h2>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Contacto</h2>
+      <p>Email: hrperez@misena.edu.co</p>
+      <p>Teléfono: 3184874469</p>
+      <p>2025 Realizado por Hemery Perez</p>
+    </div>
+  </footer>
+
+</body>
+</html>
